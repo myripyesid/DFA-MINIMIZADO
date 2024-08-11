@@ -1,34 +1,45 @@
-# DFA Minimization Algorithm in Java
-Proyecto de Marbin Yesid Rivera Ciro, para la materia de Lenguajes formales y compiladores. El objetivo fue implementar el algoritmo que busca estados equivalentes en un DFA explicado en KOZEN 1997, Lecture 14. 
-NOTA: El codigo de java esta la branch master, no en main, es que aun no he aprendido a usar bien github :((
+# DFA Minimization Project
 
-## Descripción del Código
+## Group Members
 
-El programa realiza dos pasos principales para minimizar un DFA:
+- **Marbin Yesid Rivera Ciro**
 
-1. **Marcado Inicial**: Marca inicialmente los pares de estados como no equivalentes si uno de los estados es final y el otro no.
-2. **Colapso**: Revisa todos los pares de estados no marcados y verifica si tienen transiciones a pares de estados que ya han sido marcados como no equivalentes. Si es así, se marcan como no equivalentes.
+## Versions and Tools
 
-### Formato de Entrada
+- **Operating System**: The version of the operating system is the one used by Replit.
+- **Programming Language**: Java
+- **Tools**: None specified; the implementation uses the Java standard library.
 
-1. **Número de Casos**:
-   - Un entero que indica la cantidad de conjuntos de datos que se procesarán.
 
-2. **Para Cada Caso**:
-   - **Número de Estados**:
-     - Un entero que especifica el número total de estados en el DFA.
-   - **Tamaño del Alfabeto**:
-     - Un entero que representa el número de símbolos en el alfabeto del DFA.
-   - **Símbolos del Alfabeto**:
-     - Una línea con los símbolos del alfabeto, separados por espacios.
-   - **Número de Estados Finales**:
-     - Un entero que indica cuántos estados son finales.
-   - **Tabla de Transiciones**:
-     - Una matriz que describe las transiciones del DFA. Cada fila representa un estado, y cada columna representa un símbolo del alfabeto. Los valores en la matriz indican el estado al que se transiciona con el símbolo correspondiente.
-     - **Estados Finales**:
-     - Una línea con los índices de los estados finales, separados por espacios.
+NOTE: The Java code is in the `master` branch, not `main`, as I haven't yet learned to use GitHub properly :((
 
-### Ejemplo de Entrada
+## Code Description
+
+The program performs two main steps to minimize a DFA:
+
+1. **Initial Marking**: Initially marks state pairs as non-equivalent if one of the states is final and the other is not.
+2. **Collapse**: Checks all unmarked state pairs and verifies if they transition to pairs of states that have already been marked as non-equivalent. If so, they are marked as non-equivalent.
+
+### Input Format
+
+1. **Number of Cases**:
+   - An integer indicating the number of data sets to process.
+
+2. **For Each Case**:
+   - **Number of States**:
+     - An integer specifying the total number of states in the DFA.
+   - **Alphabet Size**:
+     - An integer representing the number of symbols in the DFA's alphabet.
+   - **Alphabet Symbols**:
+     - A line with the alphabet symbols, separated by spaces.
+   - **Number of Final States**:
+     - An integer indicating how many states are final.
+   - **Transition Table**:
+     - A matrix describing the DFA transitions. Each row represents a state, and each column represents a symbol in the alphabet. The values in the matrix indicate the state transitioned to with the corresponding symbol.
+   - **Final States**:
+     - A line with the indices of the final states, separated by spaces.
+
+### Example Input
 1
 4
 2
@@ -41,35 +52,33 @@ a b
 0 1 2 3
 
 
+### Code Explanation
 
-### Explicación del Código
+1. **Class `DFA`**:
+   - **`states`**: Array of DFA states.
+   - **`alphabet`**: Array of characters representing the DFA's alphabet.
+   - **`transition_function`**: Matrix defining the DFA transitions. `transition_function[i][j]` indicates the state to which state `i` transitions with symbol `j`.
+   - **`final_states`**: Array containing the indices of the final states.
+   - **`QxQ`**: Matrix used to mark pairs of states as equivalent or non-equivalent.
 
-1. **Clase `DFA`**:
-   - **`states`**: Arreglo de estados del DFA.
-   - **`alphabet`**: Array de caracteres que representa el alfabeto del DFA.
-   - **`transition_function`**: Matriz que define las transiciones del DFA. `transition_function[i][j]` indica el estado al que transiciona el estado `i` con el símbolo `j`.
-   - **`final_states`**: Array que contiene los índices de los estados finales.
-   - **`QxQ`**: Matriz utilizada para marcar pares de estados como equivalentes o no equivalentes.
-
-2. **Métodos**:
+2. **Methods**:
    - **`initialMarking()`**:
-     - Marca como no equivalentes los pares de estados en los que uno es final y el otro no.
+     - Marks pairs of states as non-equivalent if one is final and the other is not.
    - **`collapse()`**:
-     - Revisa los pares de estados no marcados. Si ambos estados tienen transiciones a pares de estados ya marcados como no equivalentes, los estados se marcan como no equivalentes.
+     - Checks unmarked pairs of states. If both states transition to pairs of states already marked as non-equivalent, the states are marked as non-equivalent.
    - **`getAlphabetIndex(char a)`**:
-     - Devuelve el índice del símbolo en el alfabeto.
+     - Returns the index of the symbol in the alphabet.
    - **`numberInList(int[] list, int number)`**:
-     - Verifica si un número está en una lista de enteros.
+     - Checks if a number is in a list of integers.
 
-3. **Clase `Main`**:
-   - **Entrada**: Lee los datos de entrada desde la consola.
-   - **Proceso**:
-     - Inicializa el DFA.
-     - Realiza el marcado inicial y el colapso de pares de estados.
-     - Imprime los pares de estados equivalentes encontrados.
-   - **Salida**:
-     - Muestra los pares de estados equivalentes encontrados o indica si no se encontraron pares equivalentes.
-
+3. **Class `Main`**:
+   - **Input**: Reads input data from the console.
+   - **Process**:
+     - Initializes the DFA.
+     - Performs initial marking and collapsing of state pairs.
+     - Prints the equivalent state pairs found.
+   - **Output**:
+     - Displays the equivalent state pairs found or indicates if no equivalent pairs were found.
 
 
 
