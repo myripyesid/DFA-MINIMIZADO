@@ -1,5 +1,6 @@
 # DFA Minimization Algorithm in Java
-Proyecto de Marbin Yesid Rivera Ciro, para la materia de Lenguajes formales y compiladores. El objetivo fue implementar el algoritmo que busca estados equivalentes en un DFA explicado en KOZEN 1997, Lecture 14.
+Proyecto de Marbin Yesid Rivera Ciro, para la materia de Lenguajes formales y compiladores. El objetivo fue implementar el algoritmo que busca estados equivalentes en un DFA explicado en KOZEN 1997, Lecture 14. 
+NOTA: El codigo de java esta la branch master, no en main, es que aun no he aprendido a usar bien github :((
 
 ## Descripción del Código
 
